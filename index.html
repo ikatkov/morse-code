@@ -56,6 +56,7 @@
         }
 
         .controls {
+            display: none; /* Hide controls by default */
             position: static;
             transform: none;
             margin: 0;
@@ -63,7 +64,6 @@
             padding: 20px 30px;
             border-radius: 10px;
             color: white;
-            display: flex;
             align-items: center;
             gap: 10px;
         }
@@ -144,9 +144,28 @@
         td:empty {
             border: none;
         }
+
+        .enable-audio-btn {
+            background: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .enable-audio-btn:hover {
+            background: #2980b9;
+        }
     </style>
 </head>
 <body>
+    <button id="enableAudio" class="enable-audio-btn">Enable Audio</button>
     <div class="header-container">
         <img src="images/morse-code-visual.png" alt="Morse Code Visual" class="header-logo">
         <div class="controls">
@@ -238,10 +257,20 @@
             oscillator.stop(audioContext.currentTime + duration / 1000);
         }
 
+        // Add new variable for tracking audio initialization
+        let isAudioInitialized = false;
+
         // Function to play morse code
         async function playMorseCode(letter) {
+            if (!isAudioInitialized) return; // Don't play if audio isn't initialized
+            
             if (!audioContext) {
-                audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                try {
+                    audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                } catch (e) {
+                    console.error('Web Audio API not supported:', e);
+                    return;
+                }
             }
             
             const morse = morseCode[letter.toUpperCase()];
@@ -342,6 +371,24 @@
         document.addEventListener('mouseup', function() {
             const modal = document.getElementById('imageModal');
             modal.style.display = 'none';
+        });
+
+        // Add initialization function
+        document.getElementById('enableAudio').addEventListener('click', function() {
+            try {
+                audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                isAudioInitialized = true;
+                
+                // Show controls and hide button
+                document.querySelector('.controls').style.display = 'flex';
+                this.style.display = 'none';
+                
+                // Optional: Play a test tone to confirm audio works
+                playTone(100);
+            } catch (e) {
+                console.error('Failed to initialize audio:', e);
+                alert('Sorry, audio is not supported in your browser');
+            }
         });
     </script>
 </body>
