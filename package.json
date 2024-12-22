@@ -1,6 +1,6 @@
 {
   "name": "morse-code-cheatsheet",
-  "version": "1.0.4",
+  "version": "1.0.7",
   "description": "A static HTML page project with Semantic Release",
   "main": "index.html",
   "repository": {

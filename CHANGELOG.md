@@ -1,3 +1,10 @@
+## [1.0.7](https://github.com/ikatkov/morse-code/compare/v1.0.6...v1.0.7) (2024-12-22)
+
+
+### Bug Fixes
+
+* Release process patches ([f88a19d](https://github.com/ikatkov/morse-code/commit/f88a19d6a55c67dea07d50edb6966cf421ab8684))
+
 ## [1.0.6](https://github.com/ikatkov/morse-code/compare/v1.0.5...v1.0.6) (2024-12-22)
 
 
