@@ -310,7 +310,7 @@
         // Audio context and settings
         let audioContext;
         const frequency = 1000; // 1kHz
-        let dotDuration = wpmToDotDuration(25);
+        let dotDuration = wpmToDotDuration(15);
         let dashDuration = dotDuration * 3;
         let pauseDuration = dotDuration;
         let letterPause = dotDuration * 3;
@@ -326,7 +326,9 @@
                     // Play a short beep to confirm audio works (optional)
                     playTone(100);
 
-                    // Remove the event listener after initialization
+                   document.querySelector('.controls').style.display = 'flex';
+ 
+                   // Remove the event listener after initialization
                     document.removeEventListener('click', initializeAudioContext);
                     document.removeEventListener('touchstart', initializeAudioContext);
                 } catch (e) {
