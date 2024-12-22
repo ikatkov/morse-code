@@ -3,7 +3,6 @@
 
 Live https://ikatkov.github.io/morse-code/
 
----- 
 
 
 An interactive web application for learning Morse code through visual and audio cues. Each letter is represented by an image that starts with that letter, and clicking on an image plays its corresponding Morse code sound.
