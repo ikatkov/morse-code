@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,26 +17,32 @@
             margin: 0;
             padding: 20px;
         }
+
         table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
             table-layout: fixed;
         }
-        th, td {
+
+        th,
+        td {
             border: 1px solid #ddd;
             padding: 8px;
             text-align: center;
             width: 10%;
         }
+
         th {
             background-color: #4CAF50;
             color: white;
         }
+
         img {
             width: 150px;
             height: auto;
         }
+
         /* Modal styles */
         .modal {
             display: none;
@@ -47,33 +54,43 @@
             background-color: rgba(239, 64, 55, 0.9);
             z-index: 1000;
             cursor: pointer;
-            overflow-y: auto; /* Enable scrolling */
-            -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+            overflow-y: auto;
+            /* Enable scrolling */
+            -webkit-overflow-scrolling: touch;
+            /* Smooth scrolling on iOS */
         }
 
         .modal-content {
             margin: auto;
             display: block;
-            width: 504px;  /* Set fixed width */
-            height: 601px; /* Set fixed height */
+            width: 504px;
+            /* Set fixed width */
+            height: 601px;
+            /* Set fixed height */
             position: relative;
             top: 50%;
             transform: translateY(-50%);
-            max-width: 100%; /* Ensure it fits on mobile */
-            max-height: 90vh; /* Prevent image from being too tall */
-            object-fit: contain; /* Maintain aspect ratio */
+            max-width: 100%;
+            /* Ensure it fits on mobile */
+            max-height: 90vh;
+            /* Prevent image from being too tall */
+            object-fit: contain;
+            /* Maintain aspect ratio */
         }
 
         @media screen and (max-width: 768px) {
             .modal-content {
-                width: auto; /* Allow width to adjust on mobile */
-                height: auto; /* Allow height to adjust on mobile */
-                max-width: 90%; /* Leave some margin on sides */
+                width: auto;
+                /* Allow width to adjust on mobile */
+                height: auto;
+                /* Allow height to adjust on mobile */
+                max-width: 90%;
+                /* Leave some margin on sides */
             }
         }
 
         .controls {
-            display: flex; 
+            display: flex;
             position: static;
             transform: none;
             margin: 0;
@@ -185,39 +202,49 @@
             table {
                 table-layout: fixed;
             }
-            
+
             td {
-                width: 33.33%; /* Make cells take up 1/3 of the width */
+                width: 33.33%;
+                /* Make cells take up 1/3 of the width */
                 display: table-cell;
             }
 
             tr td:nth-child(n+4) {
-                display: none; /* Hide cells beyond the first 3 */
+                display: none;
+                /* Hide cells beyond the first 3 */
             }
 
             img {
-                width: 100%; /* Make images fill their cells */
-                max-width: 120px; /* But not too large */
+                width: 100%;
+                /* Make images fill their cells */
+                max-width: 120px;
+                /* But not too large */
                 height: auto;
             }
 
             .letter-only {
-                font-size: 24px; /* Slightly smaller font for mobile */
+                font-size: 24px;
+                /* Slightly smaller font for mobile */
             }
 
             .header-logo {
-                max-width: 100%; /* Full width on mobile */
+                max-width: 100%;
+                /* Full width on mobile */
             }
 
             .enable-audio-btn {
-                position: static; /* Remove absolute positioning */
+                position: static;
+                /* Remove absolute positioning */
                 display: block;
-                margin: 20px auto; /* Center the button */
-                width: 200px; /* Fixed width for better mobile appearance */
+                margin: 20px auto;
+                /* Center the button */
+                width: 200px;
+                /* Fixed width for better mobile appearance */
             }
 
             .header-container {
-                flex-direction: column; /* Stack items vertically */
+                flex-direction: column;
+                /* Stack items vertically */
                 align-items: center;
                 gap: 10px;
             }
@@ -226,19 +253,23 @@
         /* Mobile landscape styles */
         @media screen and (max-width: 768px) and (orientation: landscape) {
             td {
-                width: 16.66%; /* Make cells take up 1/6 of the width */
+                width: 16.66%;
+                /* Make cells take up 1/6 of the width */
             }
 
             tr td:nth-child(n+4):nth-child(-n+6) {
-                display: table-cell; /* Show cells 4-6 */
+                display: table-cell;
+                /* Show cells 4-6 */
             }
 
             tr td:nth-child(n+7) {
-                display: none; /* Hide cells beyond 6 */
+                display: none;
+                /* Hide cells beyond 6 */
             }
         }
     </style>
 </head>
+
 <body>
     <div class="header-container">
         <img src="images/morse-code-visual.png" alt="Morse Code Visual" class="header-logo">
@@ -288,7 +319,17 @@
             "Wand.png",
             "X-ray.png",
             "Yard.png",
-            "Zebra.png"
+            "Zebra.png",
+            "1.png",
+            "2.png",
+            "3.png",
+            "4.png",
+            "5.png",
+            "6.png",
+            "7.png",
+            "8.png",
+            "9.png",
+            "0.png",
         ];
 
         // Reference to the tbody of the table
@@ -296,18 +337,22 @@
 
         // Add Morse code dictionary
         const morseCode = {
-            'A': '.-',     'B': '-...',   'C': '-.-.', 
-            'D': '-..',    'E': '.',      'F': '..-.',
-            'G': '--.',    'H': '....',   'I': '..',
-            'J': '.---',   'K': '-.-',    'L': '.-..',
-            'M': '--',     'N': '-.',     'O': '---',
-            'P': '.--.',   'Q': '--.-',   'R': '.-.',
-            'S': '...',    'T': '-',      'U': '..-',
-            'V': '...-',   'W': '.--',    'X': '-..-',
-            'Y': '-.--',   'Z': '--..'
+            'A': '.-', 'B': '-...', 'C': '-.-.',
+            'D': '-..', 'E': '.', 'F': '..-.',
+            'G': '--.', 'H': '....', 'I': '..',
+            'J': '.---', 'K': '-.-', 'L': '.-..',
+            'M': '--', 'N': '-.', 'O': '---',
+            'P': '.--.', 'Q': '--.-', 'R': '.-.',
+            'S': '...', 'T': '-', 'U': '..-',
+            'V': '...-', 'W': '.--', 'X': '-..-',
+            'Y': '-.--', 'Z': '--..',
+            '0': '-----', '1': '.----', '2': '..---',
+            '3': '...--', '4': '....-', '5': '.....',
+            '6': '-....', '7': '--...', '8': '---..',
+            '9': '----.'
         };
 
-        // Audio context and settings
+        // Audio conte  xt and settings
         let audioContext;
         const frequency = 1000; // 1kHz
         let dotDuration = wpmToDotDuration(15);
@@ -327,7 +372,7 @@
                     playTone(100);
 
 
-                   // Remove the event listener after initialization
+                    // Remove the event listener after initialization
                     document.removeEventListener('click', initializeAudioContext);
                     document.removeEventListener('touchstart', initializeAudioContext);
                 } catch (e) {
@@ -341,15 +386,15 @@
         function playTone(duration) {
             const oscillator = audioContext.createOscillator();
             const gainNode = audioContext.createGain();
-            
+
             oscillator.connect(gainNode);
             gainNode.connect(audioContext.destination);
-            
+
             oscillator.frequency.value = frequency;
             oscillator.type = 'sine';
-            
+
             gainNode.gain.setValueAtTime(0.5, audioContext.currentTime);
-            
+
             oscillator.start();
             oscillator.stop(audioContext.currentTime + duration / 1000);
         }
@@ -360,7 +405,7 @@
         // Function to play morse code
         async function playMorseCode(letter) {
             if (!isAudioInitialized) return; // Don't play if audio isn't initialized
-            
+
             if (!audioContext) {
                 try {
                     audioContext = new (window.AudioContext || window.webkitAudioContext)();
@@ -369,7 +414,7 @@
                     return;
                 }
             }
-            
+
             const morse = morseCode[letter.toUpperCase()];
             if (!morse) return;
 
@@ -406,7 +451,7 @@
         document.addEventListener('touchstart', initializeAudioContext);
 
         // Add slider event listener
-        document.getElementById('wpmSlider').addEventListener('input', function(e) {
+        document.getElementById('wpmSlider').addEventListener('input', function (e) {
             const wpm = parseInt(e.target.value);
             document.getElementById('wpmValue').textContent = `${wpm} WPM`;
             updateTiming(wpm);
@@ -417,34 +462,34 @@
             const isMobile = window.innerWidth <= 938;
             const isLandscape = window.innerWidth > window.innerHeight;
             const itemsPerRow = isMobile ? (isLandscape ? 6 : 3) : 10;
-            
+
             for (let i = 0; i < images.length; i += itemsPerRow) {
                 const row = document.createElement("tr");
                 const remainingItems = Math.min(itemsPerRow, images.length - i);
                 const paddingNeeded = Math.floor((itemsPerRow - remainingItems) / 2);
-                
+
                 // Add padding cells at the start
                 for (let p = 0; p < paddingNeeded; p++) {
                     const emptyCell = document.createElement("td");
                     row.appendChild(emptyCell);
                 }
-                
+
                 // Add image cells
                 for (let j = 0; j < remainingItems; j++) {
                     const image = images[i + j];
                     const imageCell = document.createElement("td");
                     const imgElement = document.createElement("img");
-                    
+
                     imgElement.src = `images/${image}`;
                     imgElement.alt = image.split(".")[0];
-                    
+
                     const letterOnlyDiv = document.createElement("div");
                     letterOnlyDiv.textContent = image.split(".")[0].charAt(0);
                     letterOnlyDiv.className = 'letter-only';
-                    
+
                     const letterDiv = document.createElement("div");
                     letterDiv.textContent = image.split(".")[0];
-                    
+
                     imageCell.appendChild(letterOnlyDiv);
                     imageCell.appendChild(imgElement);
                     imageCell.appendChild(letterDiv);
@@ -453,14 +498,14 @@
                     imgElement.addEventListener('mousedown', showModalAndPlaySound);
                     imgElement.addEventListener('touchstart', showModalAndPlaySound);
                 }
-                
+
                 // Add remaining padding cells if needed
                 const remainingPadding = itemsPerRow - remainingItems - paddingNeeded;
                 for (let p = 0; p < remainingPadding; p++) {
                     const emptyCell = document.createElement("td");
                     row.appendChild(emptyCell);
                 }
-                
+
                 tbody.appendChild(row);
             }
         }
@@ -476,7 +521,7 @@
             const modalImg = document.getElementById('modalImage');
             modal.style.display = 'block';
             modalImg.src = imgElement.src;
-            
+
             // Play morse code for the first letter of the image name
             const letter = imgElement.alt.charAt(0);
             playMorseCode(letter);
@@ -493,13 +538,14 @@
 
         // Add window resize handler to rebuild table
         let resizeTimeout;
-        window.addEventListener('resize', function() {
+        window.addEventListener('resize', function () {
             clearTimeout(resizeTimeout);
-            resizeTimeout = setTimeout(function() {
+            resizeTimeout = setTimeout(function () {
                 tbody.innerHTML = ''; // Clear existing table
                 createTableRows(); // Rebuild table
             }, 250); // Debounce resize events
         });
     </script>
 </body>
+
 </html>
