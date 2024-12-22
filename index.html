@@ -73,7 +73,7 @@
         }
 
         .controls {
-            display: none; /* Hide controls by default */
+            display: flex; 
             position: static;
             transform: none;
             margin: 0;
@@ -245,7 +245,7 @@
         <!-- <button id="enableAudio" class="enable-audio-btn">Enable Audio</button> -->
         <div class="controls">
             <label for="wpmSlider">Speed (WPM):</label>
-            <input type="range" id="wpmSlider" min="5" max="25" value="10">
+            <input type="range" id="wpmSlider" min="5" max="25" value="15">
             <span id="wpmValue">10 WPM</span>
         </div>
     </div>
@@ -326,8 +326,7 @@
                     // Play a short beep to confirm audio works (optional)
                     playTone(100);
 
-                   document.querySelector('.controls').style.display = 'flex';
- 
+
                    // Remove the event listener after initialization
                     document.removeEventListener('click', initializeAudioContext);
                     document.removeEventListener('touchstart', initializeAudioContext);
@@ -491,24 +490,6 @@
             const modal = document.getElementById('imageModal');
             modal.style.display = 'none';
         }
-
-        // // Add initialization function
-        // document.getElementById('enableAudio').addEventListener('click', function() {
-        //     try {
-        //         audioContext = new (window.AudioContext || window.webkitAudioContext)();
-        //         isAudioInitialized = true;
-                
-        //         // Show controls and hide button
-        //         document.querySelector('.controls').style.display = 'flex';
-        //         this.style.display = 'none';
-                
-        //         // Optional: Play a test tone to confirm audio works
-        //         playTone(100);
-        //     } catch (e) {
-        //         console.error('Failed to initialize audio:', e);
-        //         alert('Sorry, audio is not supported in your browser');
-        //     }
-        // });
 
         // Add window resize handler to rebuild table
         let resizeTimeout;
