@@ -1,3 +1,10 @@
+## [1.0.9](https://github.com/ikatkov/morse-code/compare/v1.0.8...v1.0.9) (2024-12-22)
+
+
+### Bug Fixes
+
+* move update logic into a separate file ([a0ea628](https://github.com/ikatkov/morse-code/commit/a0ea628f4931c6ba5b985b252dd873a0c1e85290))
+
 ## [1.0.8](https://github.com/ikatkov/morse-code/compare/v1.0.7...v1.0.8) (2024-12-22)
 
 
