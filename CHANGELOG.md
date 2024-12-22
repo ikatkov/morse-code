@@ -1,3 +1,11 @@
+## [1.0.11](https://github.com/ikatkov/morse-code/compare/v1.0.10...v1.0.11) (2024-12-22)
+
+
+### Bug Fixes
+
+* move prepareCmd to release-notes-generator ([efd6cf7](https://github.com/ikatkov/morse-code/commit/efd6cf7004f2462da68fc351a443b0f43626c66a))
+* move prepareCmd to release-notes-generator ([7a7f43f](https://github.com/ikatkov/morse-code/commit/7a7f43f517522cc9e3d6bdb509c3590671b5864f))
+
 ## [1.0.10](https://github.com/ikatkov/morse-code/compare/v1.0.9...v1.0.10) (2024-12-22)
 
 

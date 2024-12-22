@@ -1,7 +1,7 @@
 {
   "name": "Morse Code",
   "short_name": "Morse Code",
-  "start_url": "/morse-code/?version=1.0.10",
+  "start_url": "/morse-code/?version=1.0.11",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",
