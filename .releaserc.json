@@ -7,7 +7,7 @@
         "@semantic-release/git",
         {
             "path": "@semantic-release/exec",
-            "prepareCmd": "sed -i 's/__VERSION__/'\"${nextRelease.version}\"'/g' manifest.json && git add manifest.json"
+            "prepareCmd": "sed -i 's/__VERSION__/'\"${nextRelease.version}\"'/g' manifest.json && git add manifest.json && git status"
         },  
         "@semantic-release/changelog",
         {
