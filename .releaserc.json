@@ -7,7 +7,7 @@
         "@semantic-release/git",
         {
             "path": "@semantic-release/exec",
-            "prepareCmd": "cat manifest.json && sed -i 's#\\(\"start_url\": \"/morse-code/\\?version=\\)[^\"]*#\\1'\"${nextRelease.version}\"'#g' manifest.json && cat manifest.json && git add manifest.json && git status"
+             "prepareCmd": "VERSION=${nextRelease.version} node update-manifest.js && git add manifest.json"
         },  
         {
             "path": "@semantic-release/npm",
