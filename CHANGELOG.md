@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/ikatkov/morse-code/compare/v1.0.11...v1.1.0) (2024-12-22)
+
+
+### Features
+
+* add images ([5eb5bd6](https://github.com/ikatkov/morse-code/commit/5eb5bd6b5d365993f19e9786535e59e032dd86e3))
+
 ## [1.0.11](https://github.com/ikatkov/morse-code/compare/v1.0.10...v1.0.11) (2024-12-22)
 
 
