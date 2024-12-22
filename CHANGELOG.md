@@ -1,3 +1,10 @@
+## [1.0.8](https://github.com/ikatkov/morse-code/compare/v1.0.7...v1.0.8) (2024-12-22)
+
+
+### Bug Fixes
+
+* sed is not updating, add debug log ([1b45619](https://github.com/ikatkov/morse-code/commit/1b45619d00287c37a7b92fa34ac77c057bc74bf6))
+
 ## [1.0.7](https://github.com/ikatkov/morse-code/compare/v1.0.6...v1.0.7) (2024-12-22)
 
 
