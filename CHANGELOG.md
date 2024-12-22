@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/ikatkov/morse-code/compare/v1.0.3...v1.0.4) (2024-12-22)
+
+
+### Bug Fixes
+
+* Make slider visible on page load, default WPM is 15 ([ad85a44](https://github.com/ikatkov/morse-code/commit/ad85a44f50ee222ae2ffcb4cec07b19074066099))
+
 ## [1.0.3](https://github.com/ikatkov/morse-code/compare/v1.0.2...v1.0.3) (2024-12-22)
 
 
