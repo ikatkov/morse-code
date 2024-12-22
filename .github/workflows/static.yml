@@ -28,17 +28,22 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # to be able to publish a GitHub release
+      issues: write # to be able to comment on released issues
+      pull-requests: write # to be able to comment on released pull requests
+      id-token: write # to enable use of OIDC for npm provenance    
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
         with:
-          persist-credentials: false # Ensures fresh token use        
+          fetch-depth: 0
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '23'
+          node-version: "lts/*"
       - name: Install dependencies
-        run: npm install
+        run: npm clean-install
       - name: Run Semantic Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
