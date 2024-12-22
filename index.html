@@ -242,7 +242,7 @@
 <body>
     <div class="header-container">
         <img src="images/morse-code-visual.png" alt="Morse Code Visual" class="header-logo">
-        <button id="enableAudio" class="enable-audio-btn">Enable Audio</button>
+        <!-- <button id="enableAudio" class="enable-audio-btn">Enable Audio</button> -->
         <div class="controls">
             <label for="wpmSlider">Speed (WPM):</label>
             <input type="range" id="wpmSlider" min="5" max="25" value="10">
@@ -315,6 +315,27 @@
         let pauseDuration = dotDuration;
         let letterPause = dotDuration * 3;
 
+
+        // Function to initialize audio context on user interaction
+        function initializeAudioContext() {
+            if (!isAudioInitialized) {
+                try {
+                    audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                    isAudioInitialized = true;
+                    console.log('Audio context initialized.');
+                    // Play a short beep to confirm audio works (optional)
+                    playTone(100);
+
+                    // Remove the event listener after initialization
+                    document.removeEventListener('click', initializeAudioContext);
+                    document.removeEventListener('touchstart', initializeAudioContext);
+                } catch (e) {
+                    console.error('Failed to initialize audio context:', e);
+                }
+            }
+        }
+
+
         // Function to play a tone
         function playTone(duration) {
             const oscillator = audioContext.createOscillator();
@@ -378,6 +399,10 @@
             pauseDuration = dotDuration;
             letterPause = dotDuration * 3;
         }
+
+        // Attach event listeners to initialize audio on interaction
+        document.addEventListener('click', initializeAudioContext);
+        document.addEventListener('touchstart', initializeAudioContext);
 
         // Add slider event listener
         document.getElementById('wpmSlider').addEventListener('input', function(e) {
@@ -465,23 +490,23 @@
             modal.style.display = 'none';
         }
 
-        // Add initialization function
-        document.getElementById('enableAudio').addEventListener('click', function() {
-            try {
-                audioContext = new (window.AudioContext || window.webkitAudioContext)();
-                isAudioInitialized = true;
+        // // Add initialization function
+        // document.getElementById('enableAudio').addEventListener('click', function() {
+        //     try {
+        //         audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        //         isAudioInitialized = true;
                 
-                // Show controls and hide button
-                document.querySelector('.controls').style.display = 'flex';
-                this.style.display = 'none';
+        //         // Show controls and hide button
+        //         document.querySelector('.controls').style.display = 'flex';
+        //         this.style.display = 'none';
                 
-                // Optional: Play a test tone to confirm audio works
-                playTone(100);
-            } catch (e) {
-                console.error('Failed to initialize audio:', e);
-                alert('Sorry, audio is not supported in your browser');
-            }
-        });
+        //         // Optional: Play a test tone to confirm audio works
+        //         playTone(100);
+        //     } catch (e) {
+        //         console.error('Failed to initialize audio:', e);
+        //         alert('Sorry, audio is not supported in your browser');
+        //     }
+        // });
 
         // Add window resize handler to rebuild table
         let resizeTimeout;
