@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/ikatkov/morse-code/compare/v1.0.4...v1.0.5) (2024-12-22)
+
+
+### Bug Fixes
+
+* <span id="wpmValue">15 WPM</span> ([2143ef4](https://github.com/ikatkov/morse-code/commit/2143ef48ea02e3fabdd543ac427af83773d95604))
+
 ## [1.0.4](https://github.com/ikatkov/morse-code/compare/v1.0.3...v1.0.4) (2024-12-22)
 
 
