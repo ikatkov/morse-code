@@ -3,8 +3,7 @@
         "main"
     ],
     "plugins": [
-        "@semantic-release/release-notes-generator",
-        "@semantic-release/git",
+        "@semantic-release/release-notes-generator"
         {
             "path": "@semantic-release/exec",
              "prepareCmd": "VERSION=${nextRelease.version} node update-manifest.js && git add manifest.json && cat manifest.json && git status"
